@@ -1,12 +1,29 @@
+import { Navbar } from "@/components/Navbar";
+import { Hero } from "@/components/Hero";
+import { ProjectsSection } from "@/components/ProjectsSection";
+import { AboutSection } from "@/components/AboutSection";
+import { ContactFooter } from "@/components/ContactFooter";
+import { SectionFadeIn } from "@/components/SectionFadeIn";
+import { getProjects } from "@/data/projects";
+
 export default function Home() {
+  const projects = getProjects();
+
   return (
-    <main className="flex min-h-screen items-center justify-center">
-      <h1 className="text-4xl font-extrabold text-text-primary">
-        <span className="bg-gradient-to-r from-royal to-sky bg-clip-text text-transparent">
-          LM
-        </span>
-        <span className="font-light">Customs</span>
-      </h1>
-    </main>
+    <>
+      <Navbar />
+      <main>
+        <Hero />
+        <SectionFadeIn>
+          <ProjectsSection projects={projects} />
+        </SectionFadeIn>
+        <SectionFadeIn>
+          <AboutSection />
+        </SectionFadeIn>
+        <SectionFadeIn>
+          <ContactFooter />
+        </SectionFadeIn>
+      </main>
+    </>
   );
 }
