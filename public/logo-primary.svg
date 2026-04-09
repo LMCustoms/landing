@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 200" width="680" height="200">
+  <defs>
+    <linearGradient id="g1" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6366F1"/>
+      <stop offset="50%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#0EA5E9"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#06B6D4"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06B6D4"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#0EA5E9"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Icon at left, scaled to fit 200px height -->
+  <g transform="translate(10, 10) scale(0.9)">
+    <path d="
+      M 24 170
+      L 24 28
+      C 24 24, 27 22, 30 22
+      L 46 22
+      C 50 22, 52 24, 52 28
+      L 52 100
+      L 80 56
+      C 83 52, 88 52, 91 56
+      L 108 88
+      L 124 56
+      C 127 52, 132 52, 135 56
+      L 176 126
+      C 178 130, 178 132, 178 136
+      L 178 164
+      C 178 168, 175 170, 172 170
+      L 154 170
+      C 150 170, 148 168, 148 164
+      L 148 140
+      L 130 112
+      L 108 148
+      C 105 152, 100 152, 97 148
+      L 80 114
+      L 52 160
+      L 52 164
+      C 52 168, 50 170, 46 170
+      Z
+    " fill="url(#g1)"/>
+    <rect x="24" y="148" width="52" height="22" rx="4" fill="url(#g2)"/>
+    <path d="M 164 42 L 174 28 L 184 42 L 174 56 Z" fill="url(#accent)"/>
+    <path d="M 164 42 L 174 28 L 184 42 L 174 56 Z" fill="white" opacity="0.15"/>
+  </g>
+
+  <!-- Wordmark -->
+  <g transform="translate(210, 0)">
+    <text y="120" font-family="'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="82" font-weight="800" fill="url(#textGrad)" letter-spacing="-3">LM</text>
+    <text x="130" y="120" font-family="'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="82" font-weight="300" fill="#334155" letter-spacing="-2">Customs</text>
+    <text y="148" font-family="'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#94A3B8" letter-spacing="5">CUSTOM DEV TOOLS</text>
+  </g>
+</svg>
