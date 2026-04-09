@@ -8,23 +8,17 @@ on:
 
 jobs:
   deploy:
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    if: github.event.workflow_run.conclusion == 'success'
     uses: LMCustoms/.github/.github/workflows/deploy-ssh.yml@main
     with:
       script: |
         mkdir -p ${{ secrets.DEPLOY_DIR }}
         cd ${{ secrets.DEPLOY_DIR }}
-
-        # Sync docker-compose.yml from repo
         curl -fsSL https://raw.githubusercontent.com/LMCustoms/landing/main/docker-compose.yml -o docker-compose.yml.new
         mv docker-compose.yml.new docker-compose.yml
-
-        # Deploy
         docker compose pull
         docker compose down
         docker compose up -d
-
-        # Smoke test
         echo "Waiting for landing page to come up..."
         STATUS="000"
         for i in $(seq 1 24); do
@@ -36,11 +30,10 @@ jobs:
           echo "  attempt $i/24..."
           sleep 5
         done
-
         if [ "$STATUS" = "200" ]; then
-          echo "✓ Smoke test passed"
+          echo "Smoke test passed"
         else
-          echo "✗ Smoke test FAILED — HTTP $STATUS"
+          echo "Smoke test FAILED - HTTP $STATUS"
           docker compose logs --tail=50
           exit 1
         fi
