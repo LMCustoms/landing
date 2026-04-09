@@ -15,8 +15,8 @@ jobs:
     uses: LMCustoms/.github/.github/workflows/deploy-ssh.yml@main
     with:
       script: |
-        mkdir -p ${{ secrets.DEPLOY_DIR }}
-        cd ${{ secrets.DEPLOY_DIR }}
+        mkdir -p ${{ vars.DEPLOY_DIR }}
+        cd ${{ vars.DEPLOY_DIR }}
         curl -fsSL https://raw.githubusercontent.com/LMCustoms/landing/main/docker-compose.yml -o docker-compose.yml.new
         mv docker-compose.yml.new docker-compose.yml
         docker compose pull
