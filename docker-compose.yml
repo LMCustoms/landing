@@ -1,0 +1,19 @@
+services:
+  landing:
+    build: .
+    container_name: lmcustoms-landing
+    restart: unless-stopped
+    expose:
+      - "3000"
+    networks:
+      - traefik
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.lmcustoms-landing.rule=Host(`lmcustoms.cc`)"
+      - "traefik.http.routers.lmcustoms-landing.entrypoints=websecure"
+      - "traefik.http.routers.lmcustoms-landing.tls.certresolver=letsencrypt"
+      - "traefik.http.services.lmcustoms-landing.loadbalancer.server.port=3000"
+
+networks:
+  traefik:
+    external: true
