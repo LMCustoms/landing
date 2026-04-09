@@ -21,7 +21,7 @@ export function Hero() {
       </div>
 
       {/* Wordmark */}
-      <div className="relative mb-6">
+      <div className="relative mb-6 scale-75 sm:scale-100">
         <Wordmark size="lg" />
       </div>
 
