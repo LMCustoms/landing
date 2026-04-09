@@ -6,7 +6,7 @@ services:
     expose:
       - "3000"
     networks:
-      - traefik
+      - proxy-manager_default
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.lmcustoms-landing.rule=Host(`lmcustoms.cc`)"
@@ -15,5 +15,5 @@ services:
       - "traefik.http.services.lmcustoms-landing.loadbalancer.server.port=3000"
 
 networks:
-  traefik:
+  proxy-manager_default:
     external: true
