@@ -1,6 +1,6 @@
 services:
   landing:
-    build: .
+    image: ghcr.io/lmcustoms/landing:latest
     container_name: lmcustoms-landing
     restart: unless-stopped
     expose:
