@@ -6,8 +6,8 @@ import { ContactFooter } from "@/components/ContactFooter";
 import { SectionFadeIn } from "@/components/SectionFadeIn";
 import { getProjects } from "@/data/projects";
 
-export default function Home() {
-  const projects = getProjects();
+export default async function Home() {
+  const projects = await getProjects();
 
   return (
     <>

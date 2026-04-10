@@ -5,7 +5,7 @@ interface StatusBadgeProps {
 }
 
 const statusConfig: Record<Project["status"], { label: string; className: string }> = {
-  "in-development": {
+  in_development: {
     label: "In Development",
     className: "bg-indigo/15 text-[#818CF8]",
   },

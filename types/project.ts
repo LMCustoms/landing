@@ -16,9 +16,15 @@ export interface Project {
   longDescription: string;
   icon: string;
   iconGradient: [string, string];
-  status: "in-development" | "beta" | "released" | "deprecated";
-  version?: string;
+  status: "in_development" | "beta" | "released" | "deprecated";
+  version: string | null;
   techStack: string[];
   features: ProjectFeature[];
   links: ProjectLinks;
+  repository: string;
+  deployUrl: string | null;
+  ciStatus: string | null;
+  lastReleaseAt: string | null;
+  createdAt: string;
+  updatedAt: string;
 }
