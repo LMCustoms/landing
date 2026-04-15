@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Project } from "@/types/project";
 import { StatusBadge } from "@/components/StatusBadge";
 import { ArrowUpRight } from "lucide-react";
@@ -45,6 +46,12 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
                 Open App <ArrowUpRight className="h-3.5 w-3.5" />
               </a>
             )}
+            <Link
+              href={`/projects/${project.slug}`}
+              className="flex items-center gap-1 text-sm font-semibold text-royal transition-colors hover:text-sky"
+            >
+              View Full Project <ArrowUpRight className="h-3.5 w-3.5" />
+            </Link>
           </div>
         </div>
       </div>
