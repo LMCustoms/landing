@@ -13,3 +13,8 @@ export async function getProjects(): Promise<Project[]> {
 
   return res.json() as Promise<Project[]>;
 }
+
+export async function getProject(slug: string): Promise<Project | undefined> {
+  const projects = await getProjects();
+  return projects.find((p) => p.slug === slug);
+}
